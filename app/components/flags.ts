@@ -3,10 +3,16 @@ import { get } from '@vercel/edge-config';
  
 export const showAISection = flag({
   key: 'show-ai-section',
-  decide: () => process.env.AI_SECTION === '1',
+  async decide() {
+    const value = await get(this.key); 
+    return value ?? false;
+  },
 });
 
 export const showCardList = flag({
   key: 'card-list',
-  decide: () => process.env.CARD_LIST === '1',
+  async decide() {
+    const value = await get(this.key); 
+    return value ?? false;
+  },
 });
