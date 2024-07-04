@@ -1,7 +1,12 @@
 import { TopLeft } from "../components/top-left-section";
 import Image from "next/image";
-import { UserIcon, DocumentChartBarIcon, CubeTransparentIcon, BuildingLibraryIcon
+import {
+  UserIcon,
+  DocumentChartBarIcon,
+  CubeTransparentIcon,
+  BuildingLibraryIcon,
 } from "@heroicons/react/24/solid";
+import { Suspense } from "react";
 
 export default async function DocsLayout({
   children,
@@ -20,7 +25,7 @@ export default async function DocsLayout({
             href="../templates/admin/index.html"
             aria-label="Preline"
           >
-            <Image src="/vercel.svg" width={150} height={150} alt={"Logo"}/>
+            <Image src="/vercel.svg" width={150} height={150} alt={"Logo"} />
           </a>
         </div>
 
@@ -30,7 +35,9 @@ export default async function DocsLayout({
         >
           <ul className="space-y-1.5">
             <li>
-              <TopLeft />
+              <Suspense>
+                <TopLeft />
+              </Suspense>
             </li>
             <li>
               <a
@@ -60,7 +67,7 @@ export default async function DocsLayout({
                 className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-300"
                 href="#"
               >
-                <UserIcon className="size-6 text-black"/>
+                <UserIcon className="size-6 text-black" />
                 Accounts
               </a>
             </li>
@@ -69,7 +76,7 @@ export default async function DocsLayout({
                 className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-300"
                 href="#"
               >
-                <DocumentChartBarIcon className="size-6 text-black"/>
+                <DocumentChartBarIcon className="size-6 text-black" />
                 Analytics
               </a>
             </li>
@@ -78,7 +85,7 @@ export default async function DocsLayout({
                 className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-300"
                 href="#"
               >
-                <CubeTransparentIcon className="size-6 text-black"/>
+                <CubeTransparentIcon className="size-6 text-black" />
                 Attack Challenge Mode
               </a>
             </li>
@@ -87,7 +94,7 @@ export default async function DocsLayout({
                 className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-neutral-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-300"
                 href="#"
               >
-                <BuildingLibraryIcon className="size-6 text-black"/>
+                <BuildingLibraryIcon className="size-6 text-black" />
                 Builds
               </a>
             </li>
